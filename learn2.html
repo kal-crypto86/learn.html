@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pemuja Rahasia - Sheila On 7</title>
+  <style>
+    #watermark {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.15);
+      pointer-events: none;
+      user-select: none;
+      font-family: 'Courier New', monospace;
+    }
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, black 0%, white 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Courier New', monospace;
+    }
+    #container {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 30px 40px;
+      border-radius: 10px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+    h1 {
+      color: black;
+      margin-bottom: 30px;
+    }
+    #output {
+      color: black;
+      white-space: pre-wrap;
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    audio {
+      width: 100%;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="watermark">kallisaint</div>
+    <h1>Pemuja Rahasia - Sheila On 7</h1>
+    <div id="output"></div>
+    <audio id="music" controls autoplay loop>
+      <source src="C:\Users\Administrator\OneDrive\Dokumen\punya chikal\Sheila On 7 - Pemuja Rahasia (Official Music Video).mp3"type="audio/mpeg"/>
+      <a href="https://youtu.be/HvSW5Kap81o?si=0mIkMqOnMZQuVGWx">
+    </audio>
+  </div>
+
+  <script>
+    const lines = [
+      "Na-na-na-na-na-na-na",
+      "Na-na-na-na-na-na-na",
+      "Na-na-na-na-na-na-na",
+      "Na-na-na-na-na-na-na",
+      "'Ku awali hariku dengan mendoakanmu",
+      "Agar kau selalu sehat dan bahagia di sana",
+      "Sebelum kau melupakanku lebih jauh",
+      "Sebelum kau meninggalkanku lebih jauh",
+      "'Ku tak pernah berharap kau 'kan merindukan",
+      "Keberadaanku yang menyedihkan ini",
+      "'Ku hanya ingin bila kau melihatku",
+      "Kapanpun, di manapun hatimu 'kan berkata seperti ini",
+      "Pria inilah yang jatuh hati padamu",
+      "Pria inilah yang 'kan selalu memujamu",
+      "A-ha, yeah, a-ha, yeah",
+      "Begitu para rapper coba menghiburku",
+      "Na-na-na-na-na-na-na",
+      "Na-na-na-na-na-na-na",
+      "Na-na-na-na-na-na-na",
+      "Na-na-na-na-na-na-na",
+      "Akulah orang yang selalu menaruh bunga",
+      "Dan menuliskan cinta di atas meja kerjamu",
+      "Akulah orang yang 'kan selalu mengawasimu",
+      "Menikmati indahmu dari sisi gelapku",
+      "Dan biarkan aku jadi pemujamu",
+      "Jangan pernah hiraukan perasaan hatiku",
+      "Tenanglah, tenang, pujaan hatiku, sayang",
+      "Aku takkan sampai hati bila menyentuhmu",
+      "Mungkin kau takkan pernah tahu",
+      "Betapa mudahnya kau untuk dikagumi",
+      "Na-na-na-na-na-na-na",
+      "Na-na-na-na-na-na-na",
+      "Mungkin kau takkan pernah sadar",
+      "Betapa mudahnya kau untuk dicintai",
+      "Na-na-na-na-na-na-na",
+      "Na-na-na-na-na-na-na",
+      "Akulah orang yang akan selalu memujamu",
+      "Akulah orang yang akan selalu mengintaimu",
+      "Akulah orang yang akan selalu memujamu",
+      "Akulah orang yang akan selalu mengintaimu",
+      "Mungkin kau takkan pernah tahu",
+      "Betapa mudahnya kau untuk dikagumi",
+      "Na-na-na-na-na-na-na",
+      "Na-na-na-na-na-na-na",
+      "Mungkin kau takkan pernah sadar",
+      "Betapa mudahnya kau untuk dicintai",
+      "Na-na-na-na-na-na-na",
+      "Na-na-na-na-na-na-na",
+      "Karena hanya dengan perasaan rinduku",
+      "Yang dalam padamu, 'ku pertahankan hidup",
+      "Maka hanya dengan jejak-jejak hatimu",
+      "Ada arti 'ku telusuri hidup ini",
+      "Selamanya hanya 'ku bisa memujamu",
+      "Selamanya hanya 'ku bisa merindukanmu"
+    ];
+
+    const output = document.getElementById('output');
+    let lineIndex = 0;
+    let charIndex = 0;
+    const delay = 60;   // dipercepat
+    const pause = 1800;  // jeda antar baris dipersingkat
+
+    function typeLine() {
+      if (lineIndex >= lines.length) return;
+
+      const currentLine = lines[lineIndex];
+      if (charIndex < currentLine.length) {
+        output.innerHTML += currentLine.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeLine, delay);
+      } else {
+        output.innerHTML += '<br>';
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(typeLine, pause);
+      }
+    }
+
+    setTimeout(typeLine, 1000); // jeda awal lebih singkat juga
+  </script>
+</body>
+</html>
